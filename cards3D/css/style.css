@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body {
+	background: #f0f2f1;
+	font-family: 'Montserrat', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	max-width: 1500px;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+.containerCard {
+	margin: 20px;
+
+}
+.containerCard a {
+	display: inline-block;
+}
+.containerCard:hover figure {
+	transform: perspective(600px) rotateY(180deg);
+}
+
+.containerCard:hover figure img{
+	filter: blur(10px);
+}
+
+figure {
+	height: 400px;
+	width: 250px;	
+	margin: 0;
+	position: relative;			/*Si no pongo esto se me caga todo y no podría poner el texto dentro*/
+	transition: all ease 1s;	/*La línea que me permite la transición*/
+	transform-style: preserve-3d; /*elements inside the figure preserve the 3d property*/
+	transform: perspective(600px) rotateY(0deg);
+}
+
+figure .front, 
+figure .back {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	transition: all ease 1s;
+}
+figure .front {
+	display: block;
+/*	backface-visibility: visible;
+*/}
+figure .back {
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	color: #fff;
+	transform: perspective(500px) rotateY(180deg);
+	backface-visibility: hidden;
+	overflow: auto;
+}
+button{
+  margin:auto;
+  display:block;
+}
+
+/* BUTTON STYLES */
+button{
+  padding:16px 32px;
+  font-family:helvetica;
+  font-size:16px;
+  font-weight:100;
+  color:#fff;
+  background: #587286;
+  border:0;
+  font-weight:100;
+}
+button:hover{
+  background: #3B5C76;
+}
+
+
+
+.button:hover > .containerCard {
+transform: perspective(500px) rotateY(180deg);
+}
+
